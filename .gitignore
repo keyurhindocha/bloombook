@@ -1,0 +1,6 @@
+# Private data — never push
+plants/private/
+
+# macOS
+.DS_Store
+**/.DS_Store
