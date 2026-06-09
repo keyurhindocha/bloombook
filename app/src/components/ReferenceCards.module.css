@@ -1,0 +1,58 @@
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.header {
+  background: var(--accent-soft);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header h3 { margin: 4px 0 0; font-size: 15px; color: var(--ink); }
+
+.tag {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.body {
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.body h4 { color: var(--accent); margin: 14px 0 4px; font-size: 13px; }
+.body ul { margin: 0 0 8px; padding-left: 18px; }
+.body li { margin-bottom: 3px; }
+.body p { margin: 0 0 8px; }
+
+.formula {
+  text-align: center;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0; }
+.table th, .table td { padding: 6px 8px; border-bottom: 1px solid var(--border); text-align: left; }
+.table th { background: var(--accent-soft); font-size: 12px; color: var(--muted); text-transform: uppercase; }
+
+.warning {
+  background: #fef9e7;
+  border: 1px solid #f0c040;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  margin-top: 12px;
+}
