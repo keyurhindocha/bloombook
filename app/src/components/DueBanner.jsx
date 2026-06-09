@@ -1,12 +1,11 @@
 import { plants } from '../data/plants.js';
-import { getWateringStatus } from '../utils/wateringDue.js';
+import { getWateringStatus, NEEDS_WATER } from '../utils/wateringDue.js';
 import styles from './DueBanner.module.css';
 
 export default function DueBanner({ history }) {
-  const duePlants = plants.filter(p => {
-    const s = getWateringStatus(history[p.id], p.waterFrequency);
-    return s === 'due' || s === 'overdue' || s === 'never-watered';
-  });
+  const duePlants = plants.filter(p =>
+    NEEDS_WATER.has(getWateringStatus(history[p.id], p.waterFrequency))
+  );
 
   if (duePlants.length === 0) {
     return (

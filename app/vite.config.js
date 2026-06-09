@@ -11,7 +11,8 @@ export default defineConfig({
       filename: 'sw.js',
       registerType: 'autoUpdate',
       injectManifest: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg}'],
+        // Plant JPGs (~5MB) are runtime-cached in sw.js instead of precached
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
       },
       manifest: {
         name: "Keyur's Plant Dashboard",

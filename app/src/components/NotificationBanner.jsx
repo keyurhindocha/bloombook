@@ -32,13 +32,26 @@ export default function NotificationBanner() {
     );
   }
 
+  if (status === 'error') {
+    return (
+      <div className={styles.banner} data-type="denied">
+        <span className={styles.icon}>⚠️</span>
+        <div>
+          <strong>Couldn't enable reminders</strong>
+          <p>Something went wrong on the server. Check your connection and try again.</p>
+        </div>
+        <button className={styles.btn} onClick={subscribe}>Retry</button>
+      </div>
+    );
+  }
+
   if (status === 'subscribed') {
     return (
       <div className={styles.banner} data-type="on">
         <span className={styles.icon}>🔔</span>
         <div>
           <strong>Watering reminders are on</strong>
-          <p>You'll get a daily notification at 8 AM on days plants need water. <button className={styles.link} onClick={unsubscribe}>Turn off</button></p>
+          <p>You'll get a morning notification on days plants need water. <button className={styles.link} onClick={unsubscribe}>Turn off</button></p>
         </div>
       </div>
     );

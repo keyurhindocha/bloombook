@@ -1,4 +1,5 @@
 import { Redis } from '@upstash/redis';
+import { subscriptionKey } from './_lib/subscriptionKey.js';
 
 const redis = Redis.fromEnv();
 
@@ -11,8 +12,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Invalid subscription' });
   }
 
-  const key = `sub:${Buffer.from(subscription.endpoint).toString('base64').slice(0, 40)}`;
-  await redis.set(key, JSON.stringify(subscription));
+  await redis.set(subscriptionKey(subscription.endpoint), JSON.stringify(subscription));
 
   return res.status(201).json({ ok: true });
 }

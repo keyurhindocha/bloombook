@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { plants } from './data/plants.js';
 import { useWateringHistory } from './hooks/useWateringHistory.js';
-import { getWateringStatus } from './utils/wateringDue.js';
+import { getWateringStatus, NEEDS_WATER } from './utils/wateringDue.js';
 import PlantCard from './components/PlantCard.jsx';
 import WateringTable from './components/WateringTable.jsx';
 import NotificationBanner from './components/NotificationBanner.jsx';
@@ -15,16 +15,17 @@ export default function App() {
   const [tab, setTab] = useState('Schedule');
   const { history, markWatered } = useWateringHistory();
 
-  const dueCount = plants.filter(p => {
-    const s = getWateringStatus(history[p.id], p.waterFrequency);
-    return s === 'due' || s === 'overdue';
-  }).length;
+  const dueCount = plants.filter(p =>
+    NEEDS_WATER.has(getWateringStatus(history[p.id], p.waterFrequency))
+  ).length;
+  const easyCount = plants.filter(p => p.difficultyLabel === 'Easy').length;
+  const watchCount = plants.filter(p => p.status === 'on_watch').length;
 
   return (
     <div className="app">
       <header className="app-header">
         <h1>🌿 Keyur's Plants</h1>
-        <p className="app-subtitle">A field guide to keeping 11 plants alive</p>
+        <p className="app-subtitle">A field guide to keeping {plants.length} plants alive</p>
       </header>
 
       <main className="app-main">
@@ -33,11 +34,11 @@ export default function App() {
 
         <div className="summary">
           <div className="stat">
-            <div className="stat-num">11</div>
+            <div className="stat-num">{plants.length}</div>
             <div className="stat-label">Total</div>
           </div>
           <div className="stat">
-            <div className="stat-num">5</div>
+            <div className="stat-num">{easyCount}</div>
             <div className="stat-label">Easy</div>
           </div>
           <div className="stat">
@@ -45,7 +46,7 @@ export default function App() {
             <div className="stat-label">Due today</div>
           </div>
           <div className="stat">
-            <div className="stat-num" style={{ color: 'var(--warn)' }}>1</div>
+            <div className="stat-num" style={{ color: 'var(--warn)' }}>{watchCount}</div>
             <div className="stat-label">🚑 Watch</div>
           </div>
         </div>

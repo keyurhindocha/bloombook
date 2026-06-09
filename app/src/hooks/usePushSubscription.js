@@ -7,25 +7,33 @@ function urlBase64ToUint8Array(base64String) {
   return Uint8Array.from([...rawData].map((c) => c.charCodeAt(0)));
 }
 
+const isSupported = 'serviceWorker' in navigator && 'PushManager' in window;
+
+function initialStatus() {
+  if (!isSupported) return 'unsupported';
+  if (Notification.permission === 'denied') return 'denied';
+  return 'loading';
+}
+
 export function usePushSubscription() {
-  const [status, setStatus] = useState('loading'); // loading | unsupported | denied | subscribed | unsubscribed
+  // loading | unsupported | denied | subscribed | unsubscribed | error
+  const [status, setStatus] = useState(initialStatus);
 
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
-  const isSupported = 'serviceWorker' in navigator && 'PushManager' in window;
 
   useEffect(() => {
-    if (!isSupported) { setStatus('unsupported'); return; }
-    if (Notification.permission === 'denied') { setStatus('denied'); return; }
+    if (!isSupported || Notification.permission === 'denied') return;
 
     navigator.serviceWorker.ready.then(async (reg) => {
       const existing = await reg.pushManager.getSubscription();
       setStatus(existing ? 'subscribed' : 'unsubscribed');
     }).catch(() => setStatus('unsubscribed'));
-  }, [isSupported]);
+  }, []);
 
   const subscribe = useCallback(async () => {
     if (!isSupported) return;
+    let sub = null;
     try {
       const permission = await Notification.requestPermission();
       if (permission !== 'granted') { setStatus('denied'); return; }
@@ -33,12 +41,12 @@ export function usePushSubscription() {
       const reg = await navigator.serviceWorker.ready;
       const vapidKey = import.meta.env.VITE_VAPID_PUBLIC_KEY;
 
-      const sub = await reg.pushManager.subscribe({
+      sub = await reg.pushManager.subscribe({
         userVisibleOnly: true,
         applicationServerKey: vapidKey ? urlBase64ToUint8Array(vapidKey) : undefined,
       });
 
-      await fetch('/api/subscribe', {
+      const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,12 +54,18 @@ export function usePushSubscription() {
         },
         body: JSON.stringify(sub.toJSON()),
       });
+      // fetch does not throw on 4xx/5xx — without this check the UI would
+      // show "subscribed" while the server stored nothing
+      if (!res.ok) throw new Error(`Server rejected subscription (${res.status})`);
 
       setStatus('subscribed');
     } catch (err) {
       console.error('Push subscribe failed:', err);
+      // Roll back the browser-side subscription so retry starts clean
+      await sub?.unsubscribe().catch(() => {});
+      setStatus('error');
     }
-  }, [isSupported]);
+  }, []);
 
   const unsubscribe = useCallback(async () => {
     if (!isSupported) return;
@@ -65,11 +79,11 @@ export function usePushSubscription() {
           'X-App-Secret': import.meta.env.VITE_APP_SECRET ?? '',
         },
         body: JSON.stringify({ endpoint: sub.endpoint }),
-      });
+      }).catch(() => {});
       await sub.unsubscribe();
     }
     setStatus('unsubscribed');
-  }, [isSupported]);
+  }, []);
 
   return { status, isIOS, isStandalone, isSupported, subscribe, unsubscribe };
 }

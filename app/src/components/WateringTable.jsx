@@ -1,13 +1,12 @@
 import { plants } from '../data/plants.js';
+import { parseFrequency } from '../utils/scheduleParser.js';
 import { getWateringStatus, STATUS_CONFIG } from '../utils/wateringDue.js';
 import styles from './WateringTable.module.css';
 
 // Sorted by frequency (most frequent first for urgency view)
-const sorted = [...plants].sort((a, b) => {
-  const minA = parseInt(a.waterFrequency.match(/(\d+)/)[1]);
-  const minB = parseInt(b.waterFrequency.match(/(\d+)/)[1]);
-  return minA - minB;
-});
+const sorted = [...plants].sort(
+  (a, b) => parseFrequency(a.waterFrequency).min - parseFrequency(b.waterFrequency).min
+);
 
 export default function WateringTable({ history, onWater }) {
   return (
