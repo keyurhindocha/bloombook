@@ -1,0 +1,46 @@
+.banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.banner[data-type="ios"]    { border-color: #4a90d9; background: #eaf3fb; }
+.banner[data-type="denied"] { border-color: var(--border); background: #f9f9f9; }
+.banner[data-type="on"]     { border-color: var(--accent); background: var(--accent-soft); }
+.banner[data-type="off"]    { border-color: #4a90d9; background: #eaf3fb; }
+
+.icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+
+.banner div { flex: 1; }
+.banner strong { display: block; font-size: 14px; margin-bottom: 2px; }
+.banner p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.4; }
+
+.btn {
+  flex-shrink: 0;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: center;
+}
+
+.btn:active { opacity: 0.8; }
+
+.link {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
