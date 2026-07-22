@@ -264,4 +264,28 @@ export const plants = [
     },
     funFact: 'When happy, it produces a bright yellow cone-shaped flower spike that lasts up to 6 weeks. The "zebra stripes" are the white leaf veins glowing against the dark green.',
   },
+  {
+    id: 'sempervivum',
+    name: 'Sempervivum',
+    subtitle: 'Hens and Chicks',
+    emoji: '🐣',
+    scientificName: 'Sempervivum ciliosum',
+    photo: 'plants/12-sempervivum.jpg',
+    waterFrequency: '14–21 days',
+    waterLevel: 'Low',
+    difficulty: '1/5',
+    difficultyLabel: 'Easy',
+    location: 'Bright, sunny spot',
+    status: 'normal',
+    care: {
+      watering: 'Every 14–21 days; let soil dry out completely. Water the soil only — never the rosette center, or the crown rots.',
+      light: 'Full sun to very bright light. Needs several hours of direct sun a day or it stretches and loses color.',
+      special: 'Spreads by "chick" offsets around the mother rosette ("hen"). Separate and repot once a chick has its own roots.',
+    },
+    signals: {
+      underwatered: 'Leaves shrivel and pucker, rosette pulls in tight — takes weeks to show; very patient.',
+      overwatered: 'Rosette turns mushy/translucent, leaves detach at a touch, black rot at the base.',
+    },
+    funFact: 'Those fine white hairs fringing each leaf shield the rosette from intense UV and trap insulating air against frost on alpine cliffs and rooftops. Sempervivum literally means "always alive" in Latin — medieval Europeans planted it on roof tiles believing it warded off lightning.',
+  },
 ];

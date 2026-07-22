@@ -1,8 +1,8 @@
 # 🌿 BloomBook
 
-> A field guide to keeping 11 houseplants alive — with watering reminders that actually nag you.
+> A field guide to keeping 12 houseplants alive — with watering reminders that actually nag you.
 
-BloomBook is a personal plant-care tracker for Keyur's collection of 11 indoor plants. It answers the three questions every plant owner forgets: **which plant is this, when did I last water it, and what's it trying to tell me?**
+BloomBook is a personal plant-care tracker for Keyur's collection of 12 indoor plants. It answers the three questions every plant owner forgets: **which plant is this, when did I last water it, and what's it trying to tell me?**
 
 It ships in two flavors:
 
@@ -15,7 +15,7 @@ It ships in two flavors:
 
 ## ✨ Features
 
-- **11 plant profiles** — photo, scientific name, watering frequency, light needs, difficulty rating, and a fun fact for each.
+- **12 plant profiles** — photo, scientific name, watering frequency, light needs, difficulty rating, and a fun fact for each.
 - **Quick watering schedule** — an at-a-glance table so you water only the plants that need it.
 - **"Read the plant" signals** — what under- vs. over-watering looks like for each species, so you can course-correct early.
 - **Reference cards & survival rules** — step-by-step playbooks for common problems and 7 beginner rules (Rule #1: *when in doubt, don't water*).
@@ -27,7 +27,7 @@ It ships in two flavors:
 
 ## 🪴 The collection
 
-🌳 Ginseng Ficus (Bonsai) · 🦚 Calathea Makoyana · ❤️ Anthurium · 🌿 Golden Pothos · 🍃 Red Aglaonema · 🐍 Snake Plant ×2 · ⚡ Neon Pothos · 🌱 Dieffenbachia · 🕊️ Peace Lily · 🌸 Aphelandra
+🌳 Ginseng Ficus (Bonsai) · 🦚 Calathea Makoyana · ❤️ Anthurium · 🌿 Golden Pothos · 🍃 Red Aglaonema · 🐍 Snake Plant ×2 · ⚡ Neon Pothos · 🌱 Dieffenbachia · 🕊️ Peace Lily · 🌸 Aphelandra · 🐣 Sempervivum
 
 The Peace Lily is the designated alarm clock — she droops first, and when she does it's time to check the drama queens (Calathea, Dieffenbachia, Aphelandra).
 
