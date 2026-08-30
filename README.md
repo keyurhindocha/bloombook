@@ -157,6 +157,12 @@ The dashboard and app show **real photos** of the collection, committed to `plan
 
 If you add photos by hand, put them through the same three steps.
 
+Published photo URLs carry a `?v=YYYYMMDD` cache-buster, bumped automatically by
+`tools/prep-photos.sh` (or manually via `tools/bump-cache-bust.py`). Filenames are
+deliberately stable across check-ins — `02-calathea.jpg` is always the Calathea, which
+is what makes the dated history folders comparable — so without the stamp, browsers
+keep serving the *previous* photos from cache and the update appears not to have shipped.
+
 Full-resolution originals stay in `plants/private/` (with dated snapshots under `plants/private/history/`), which is **gitignored** and never pushed. `.env*` files and build output are ignored too.
 
 ---

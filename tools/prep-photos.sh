@@ -89,5 +89,9 @@ for f in "${FILES[@]}"; do
   cp "$TMP/$b.jpg" "app/public/plants/$b.jpg"
   echo "$status"
 done
+# Bump the ?v= cache-buster, or viewers keep seeing the previous photos from
+# cache — filenames are identical between check-ins.
+python3 tools/bump-cache-bust.py
+
 echo "Published to plants/ and app/public/plants/."
 exit $fail
