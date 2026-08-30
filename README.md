@@ -1,8 +1,8 @@
 # 🌿 BloomBook
 
-> A field guide to keeping 12 houseplants alive — with watering reminders that actually nag you.
+> A field guide to keeping 11 houseplants alive — with watering reminders that actually nag you.
 
-BloomBook is a personal plant-care tracker for Keyur's collection of 12 indoor plants. It answers the three questions every plant owner forgets: **which plant is this, when did I last water it, and what's it trying to tell me?**
+BloomBook is a personal plant-care tracker for Keyur's collection of 11 indoor plants. It answers the three questions every plant owner forgets: **which plant is this, when did I last water it, and what's it trying to tell me?**
 
 It ships in two flavors:
 
@@ -15,7 +15,7 @@ It ships in two flavors:
 
 ## ✨ Features
 
-- **12 plant profiles** — photo, scientific name, watering frequency, light needs, difficulty rating, and a fun fact for each.
+- **11 plant profiles** — photo, scientific name, watering frequency, light needs, difficulty rating, and a fun fact for each.
 - **Quick watering schedule** — an at-a-glance table so you water only the plants that need it.
 - **"Read the plant" signals** — what under- vs. over-watering looks like for each species, so you can course-correct early.
 - **Reference cards & survival rules** — step-by-step playbooks for common problems and 7 beginner rules (Rule #1: *when in doubt, don't water*).
@@ -27,9 +27,11 @@ It ships in two flavors:
 
 ## 🪴 The collection
 
-🌳 Ginseng Ficus (Bonsai) · 🦚 Calathea Makoyana · ❤️ Anthurium · 🌿 Golden Pothos · 🍃 Red Aglaonema · 🐍 Snake Plant ×2 · ⚡ Neon Pothos · 🌱 Dieffenbachia · 🕊️ Peace Lily · 🌸 Aphelandra · 🐣 Sempervivum
+🦚 Calathea Makoyana · ❤️ Anthurium · 💛 Golden Pothos · 🌹 Red Aglaonema · 🐍 Snake Plant ×2 · 💚 Neon Pothos · ☮️ Peace Lily · 🦓 Aphelandra · 🐣 Sempervivum · 🎋 Lucky Bamboo
 
-The Peace Lily is the designated alarm clock — she droops first, and when she does it's time to check the drama queens (Calathea, Dieffenbachia, Aphelandra).
+The Peace Lily is the designated alarm clock — she droops first, and when she does it's time to check the drama queens (Calathea, Aphelandra).
+
+*Lost along the way:* 🌳 Ginseng Ficus and 🤐 Dieffenbachia, both confirmed dead at the 2026-08-30 check-in. See `plants/private/notes.md` for the full health log.
 
 ---
 
@@ -121,8 +123,10 @@ Then, in the Vercel dashboard, add every environment variable from the table abo
 ```
 bloombook/
 ├── index.html            # 📄 Self-contained dashboard (GitHub Pages)
-├── plants/               # Public plant photos used by the dashboard
-│   └── private/          # Personal progress photos — gitignored, never pushed
+├── plants/               # Published plant photos (resized, EXIF-stripped)
+│   └── private/          # Full-res originals — gitignored, never pushed
+│       ├── history/      #   dated snapshots, one folder per check-in
+│       └── notes.md      #   the dated plant health log
 ├── app/                  # 📱 React PWA
 │   ├── api/              # Vercel serverless functions
 │   │   ├── subscribe.js  #   save a push subscription
@@ -145,10 +149,18 @@ bloombook/
 
 ## 🔒 Privacy
 
-Personal progress photos live in `plants/private/` and are **gitignored** — they never leave your machine. Only the generic, public-facing plant photos in `plants/` are committed. `.env*` files and build output are ignored too.
+The dashboard and app show **real photos** of the collection, committed to `plants/` and `app/public/plants/`. Every published photo goes through three steps first:
+
+1. **Background blurred** — macOS Vision segments the plant and everything behind it is Gaussian-blurred, so the room interior isn't legible.
+2. **Resized** to 1600px on the long edge.
+3. **EXIF stripped** — the originals came off a phone carrying **GPS coordinates of the house**, so this is not optional. Note that most also carry an EXIF orientation tag, so the rotation must be baked into the pixels *before* stripping, or the photos publish sideways.
+
+If you add photos by hand, put them through the same three steps.
+
+Full-resolution originals stay in `plants/private/` (with dated snapshots under `plants/private/history/`), which is **gitignored** and never pushed. `.env*` files and build output are ignored too.
 
 ---
 
 ## 🙏 Credits
 
-Plant reference photos courtesy of [Wikimedia Commons](https://commons.wikimedia.org/). Built with 🌱 for Keyur.
+Built with 🌱 for Keyur.

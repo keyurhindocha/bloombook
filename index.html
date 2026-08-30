@@ -408,31 +408,31 @@
 
 <header>
   <h1>🌿 Keyur's Plant Dashboard</h1>
-  <div class="sub">A field guide to keeping 12 plants alive (and identifying which one is mad at you today)</div>
-  <div class="date-tag">📅 Last updated: 21 Jul 2026</div>
+  <div class="sub">A field guide to keeping 11 plants alive (and identifying which one is mad at you today)</div>
+  <div class="date-tag">📅 Last updated: 30 Aug 2026</div>
 </header>
 
 <div class="photo-hint" style="border: 2px solid var(--accent); background: var(--accent-soft);">
   📸 <b>How to add progress photos</b> &nbsp;·&nbsp; <span style="color:var(--muted);">Tracks your real plants over time and tells you what you're probably doing wrong.</span>
   <ol style="margin: 10px 0 4px 18px; padding: 0; font-size: 13px; line-height: 1.6;">
     <li>Take new photos of any plants you want diagnosed (partial updates are fine).</li>
-    <li>Save them into <code>plants/private/updates/</code> using the same filenames as the originals (e.g. <code>08-dieffenbachia.jpg</code>, <code>09-peace-lily.jpg</code>).</li>
+    <li>Save them into a new dated folder <code>plants/private/history/YYYY-MM-DD/</code> using the same filenames as the originals (e.g. <code>09-peace-lily.jpg</code>, <code>11-aphelandra.jpg</code>).</li>
     <li>Ask Claude: <code>/plant-tracker</code> or say <i>"check on my plants"</i>.</li>
   </ol>
   <div style="font-size: 12.5px; color: var(--muted); margin-top: 6px;">
-    🔒 <b>Privacy note:</b> Photos on this dashboard are generic reference shots from Wikimedia Commons — safe to host publicly. Your personal photos live in <code>plants/private/</code> which is gitignored and never published.
+    🔒 <b>Privacy note:</b> This dashboard shows your real plant photos, each with the <b>background blurred out</b>, resized, and stripped of EXIF metadata (the originals carried GPS coordinates of the house). Full-resolution originals stay in <code>plants/private/</code>, which is gitignored and never published — put any new photo through the same three steps before committing it.
   </div>
 </div>
 
 <div class="rescue-banner">
-  🚑 <b>Dieffenbachia rescue check:</b> Your stumps look pale but salvageable. <b>Press gently on each stem</b> — if firm = alive, expect green shoots in 2–4 weeks. If <b>mushy/squishy</b> = rotted, pull them out. Keep soil <b>barely moist</b> (not soggy), bright indirect light, no direct sun. Don't water again until top soil feels dry.
+  🚑 <b>Aphelandra rescue — act now:</b> Down to a bare woody stem with 2–3 leaves at the tip. Scratch the stem with a fingernail: <b>green underneath = alive</b>, brown and dry all through = gone. If alive, <b>cut it back to 2–3 nodes</b> using the Bushy Pot method below and propagate the piece you remove. It has been leggy since May and will not recover on its own.
 </div>
 
 <!-- SUMMARY STATS -->
 <div class="summary">
-  <div class="stat"><div class="num">12</div><div class="label">Total Plants</div></div>
-  <div class="stat"><div class="num">6</div><div class="label">Newbie-Easy</div></div>
-  <div class="stat"><div class="num">3</div><div class="label">Drama Queens</div></div>
+  <div class="stat"><div class="num">11</div><div class="label">Total Plants</div></div>
+  <div class="stat"><div class="num">8</div><div class="label">Newbie-Easy</div></div>
+  <div class="stat"><div class="num">2</div><div class="label">Drama Queens</div></div>
   <div class="stat"><div class="num">1</div><div class="label">🚑 On Watch</div></div>
 </div>
 
@@ -494,11 +494,11 @@
       <td><span class="pill pill-easy">Easy</span></td>
     </tr>
     <tr>
-      <td><img class="thumb" src="plants/01-bonsai.jpg" alt="" onerror="this.outerHTML='<span class=&quot;thumb-placeholder&quot;>🌳</span>'"><b>Ginseng Ficus (Bonsai)</b></td>
-      <td>7–10 days</td>
-      <td>Top inch dry; mist leaves between</td>
-      <td><span class="pill pill-med">Medium</span></td>
-      <td><span class="pill pill-medium">Medium</span></td>
+      <td><img class="thumb" src="plants/13-lucky-bamboo.jpg" alt="" onerror="this.outerHTML='<span class=&quot;thumb-placeholder&quot;>🎋</span>'"><b>Lucky Bamboo</b> (in water)</td>
+      <td>7–14 days</td>
+      <td>Replace the water entirely; distilled only</td>
+      <td><span class="pill pill-low">Low</span></td>
+      <td><span class="pill pill-easy">Easy</span></td>
     </tr>
     <tr>
       <td><img class="thumb" src="plants/03-anthurium.jpg" alt="" onerror="this.outerHTML='<span class=&quot;thumb-placeholder&quot;>❤️</span>'"><b>Anthurium</b></td>
@@ -515,13 +515,6 @@
       <td><span class="pill pill-easy">Easy</span></td>
     </tr>
     <tr>
-      <td><img class="thumb" src="plants/08-dieffenbachia.jpg" alt="" onerror="this.outerHTML='<span class=&quot;thumb-placeholder&quot;>🤐</span>'"><b>Dieffenbachia</b> 🚑</td>
-      <td>5–7 days</td>
-      <td>Top inch dry, keep evenly moist (recovery mode — barely moist only)</td>
-      <td><span class="pill pill-high">High</span></td>
-      <td><span class="pill pill-medium">Medium</span></td>
-    </tr>
-    <tr>
       <td><img class="thumb" src="plants/02-calathea.jpg" alt="" onerror="this.outerHTML='<span class=&quot;thumb-placeholder&quot;>🦚</span>'"><b>Calathea Makoyana</b></td>
       <td>5–7 days</td>
       <td>Top inch dry; use filtered/distilled water</td>
@@ -529,7 +522,7 @@
       <td><span class="pill pill-hard">Hard</span></td>
     </tr>
     <tr>
-      <td><img class="thumb" src="plants/11-aphelandra.jpg" alt="" onerror="this.outerHTML='<span class=&quot;thumb-placeholder&quot;>🦓</span>'"><b>Aphelandra (Zebra)</b></td>
+      <td><img class="thumb" src="plants/11-aphelandra.jpg" alt="" onerror="this.outerHTML='<span class=&quot;thumb-placeholder&quot;>🦓</span>'"><b>Aphelandra (Zebra)</b> 🚑</td>
       <td>5–7 days</td>
       <td>Keep soil consistently moist (not soggy)</td>
       <td><span class="pill pill-high">High</span></td>
@@ -543,31 +536,11 @@
 <h2>🪴 Plant Profiles</h2>
 <div class="plant-grid">
 
-<!-- 1. Bonsai -->
-<div class="plant-card">
-  <img class="plant-photo" src="plants/01-bonsai.jpg" alt="Ginseng Ficus"
-       onerror="this.outerHTML='<div class=&quot;photo-placeholder&quot;>📸 Save photo as<br><code>plants/01-bonsai.jpg</code></div>'">
-  <h3>🌳 1. Ginseng Ficus (Bonsai)</h3>
-  <div class="sci">Ficus microcarpa 'Ginseng'</div>
-  <div class="badges">
-    <span class="pill pill-med">Med Water</span>
-    <span class="pill pill-medium">Difficulty 3/5</span>
-  </div>
-  <div class="plant-row"><div class="key">💧 Water</div><div class="val">Every 7–10 days; let top inch of soil dry. Mist leaves between waterings.</div></div>
-  <div class="plant-row"><div class="key">☀️ Light</div><div class="val">Bright indirect; tolerates some direct morning sun.</div></div>
-  <div class="plant-row"><div class="key">🏠 Where</div><div class="val">Kitchen counter near window — looks perfect.</div></div>
-  <div class="signals">
-    <div class="signal-line"><span class="icon">🥵</span><b>Underwatered:</b> Leaves drop suddenly, look crispy and curl inward.</div>
-    <div class="signal-line"><span class="icon">💦</span><b>Overwatered:</b> Yellowing leaves all at once, soft/mushy trunk.</div>
-  </div>
-  <div class="fun-fact"><b>Fun fact:</b> That weird bulbous trunk isn't a tree — it's a swollen <i>root</i> grown in the ground for years, then potted upside-down. The plant version of beach abs. 💪</div>
-</div>
-
-<!-- 2. Calathea -->
+<!-- 1. Calathea -->
 <div class="plant-card">
   <img class="plant-photo" src="plants/02-calathea.jpg" alt="Calathea Makoyana"
        onerror="this.outerHTML='<div class=&quot;photo-placeholder&quot;>📸 Save photo as<br><code>plants/02-calathea.jpg</code></div>'">
-  <h3>🦚 2. Calathea Makoyana <span style="font-size:13px;">(Peacock Plant)</span></h3>
+  <h3>🦚 1. Calathea Makoyana <span style="font-size:13px;">(Peacock Plant)</span></h3>
   <div class="sci">Goeppertia makoyana</div>
   <div class="badges">
     <span class="pill pill-high">High Water</span>
@@ -583,11 +556,11 @@
   <div class="fun-fact"><b>Fun fact:</b> A "prayer plant" — leaves fold up at night and unfurl at sunrise. You can literally watch it move. Sit with a coffee at dusk and you'll see it happen.</div>
 </div>
 
-<!-- 3. Anthurium -->
+<!-- 2. Anthurium -->
 <div class="plant-card">
   <img class="plant-photo" src="plants/03-anthurium.jpg" alt="Anthurium"
        onerror="this.outerHTML='<div class=&quot;photo-placeholder&quot;>📸 Save photo as<br><code>plants/03-anthurium.jpg</code></div>'">
-  <h3>❤️ 3. Anthurium <span style="font-size:13px;">(Flamingo Flower)</span></h3>
+  <h3>❤️ 2. Anthurium <span style="font-size:13px;">(Flamingo Flower)</span></h3>
   <div class="sci">Anthurium andraeanum</div>
   <div class="badges">
     <span class="pill pill-med">Med Water</span>
@@ -603,11 +576,11 @@
   <div class="fun-fact"><b>Fun fact:</b> The red "flower" isn't a flower at all — it's a modified <i>leaf</i> (a spathe). The actual flower is the little yellow spike sticking out of it. Plant marketing scam, basically.</div>
 </div>
 
-<!-- 4. Golden Pothos -->
+<!-- 3. Golden Pothos -->
 <div class="plant-card">
   <img class="plant-photo" src="plants/04-pothos-golden.jpg" alt="Golden Pothos"
        onerror="this.outerHTML='<div class=&quot;photo-placeholder&quot;>📸 Save photo as<br><code>plants/04-pothos-golden.jpg</code></div>'">
-  <h3>💛 4. Golden Pothos</h3>
+  <h3>💛 3. Golden Pothos</h3>
   <div class="sci">Epipremnum aureum</div>
   <div class="badges">
     <span class="pill pill-low">Low Water</span>
@@ -623,11 +596,11 @@
   <div class="fun-fact"><b>Fun fact:</b> Nicknamed "devil's ivy" because it stays green in the dark and is nearly impossible to kill. In the wild, its leaves can grow 3 feet wide. <b>Your starter plant.</b></div>
 </div>
 
-<!-- 5. Red Aglaonema -->
+<!-- 4. Red Aglaonema -->
 <div class="plant-card">
   <img class="plant-photo" src="plants/05-aglaonema.jpg" alt="Red Aglaonema"
        onerror="this.outerHTML='<div class=&quot;photo-placeholder&quot;>📸 Save photo as<br><code>plants/05-aglaonema.jpg</code></div>'">
-  <h3>🌹 5. Red Aglaonema <span style="font-size:13px;">'Siam Aurora'</span></h3>
+  <h3>🌹 4. Red Aglaonema <span style="font-size:13px;">'Siam Aurora'</span></h3>
   <div class="sci">Aglaonema commutatum</div>
   <div class="badges">
     <span class="pill pill-med">Med Water</span>
@@ -643,11 +616,11 @@
   <div class="fun-fact"><b>Fun fact:</b> Considered a lucky plant in Asia — given as a housewarming gift to bring fortune. Yours is the "Siam Aurora" variety, named after the Thai capital region where it was bred.</div>
 </div>
 
-<!-- 6. Snake Plant 1 -->
+<!-- 5. Snake Plant 1 -->
 <div class="plant-card">
   <img class="plant-photo" src="plants/06-snake-large.jpg" alt="Snake Plant"
        onerror="this.outerHTML='<div class=&quot;photo-placeholder&quot;>📸 Save photo as<br><code>plants/06-snake-large.jpg</code></div>'">
-  <h3>🐍 6. Snake Plant <span style="font-size:13px;">(Larger, self-watering pot)</span></h3>
+  <h3>🐍 5. Snake Plant <span style="font-size:13px;">(Larger, self-watering pot)</span></h3>
   <div class="sci">Dracaena trifasciata (formerly Sansevieria)</div>
   <div class="badges">
     <span class="pill pill-low">Low Water</span>
@@ -663,11 +636,11 @@
   <div class="fun-fact"><b>Fun fact:</b> NASA studied it for air purification on the space station. One of the few plants that releases oxygen at <i>night</i> — perfect bedroom plant.</div>
 </div>
 
-<!-- 7. Neon Pothos -->
+<!-- 6. Neon Pothos -->
 <div class="plant-card">
   <img class="plant-photo" src="plants/07-pothos-neon.jpg" alt="Neon Pothos"
        onerror="this.outerHTML='<div class=&quot;photo-placeholder&quot;>📸 Save photo as<br><code>plants/07-pothos-neon.jpg</code></div>'">
-  <h3>💚 7. Neon Pothos</h3>
+  <h3>💚 6. Neon Pothos</h3>
   <div class="sci">Epipremnum aureum 'Neon'</div>
   <div class="badges">
     <span class="pill pill-low">Low Water</span>
@@ -683,31 +656,11 @@
   <div class="fun-fact"><b>Fun fact:</b> New leaves emerge a bright chartreuse-yellow and slowly deepen to lime green. The brightest part of your plant is always the freshest growth.</div>
 </div>
 
-<!-- 8. Dieffenbachia -->
-<div class="plant-card" style="border: 2px solid var(--warn);">
-  <img class="plant-photo" src="plants/08-dieffenbachia.jpg" alt="Dieffenbachia"
-       onerror="this.outerHTML='<div class=&quot;photo-placeholder&quot;>📸 Save photo as<br><code>plants/08-dieffenbachia.jpg</code></div>'">
-  <h3>🚑 8. Dieffenbachia <span style="font-size:13px;">(Dumb Cane — in recovery)</span></h3>
-  <div class="sci">Dieffenbachia seguine</div>
-  <div class="badges">
-    <span class="pill pill-high">High Water</span>
-    <span class="pill pill-medium">Difficulty 3/5</span>
-    <span class="pill" style="background:#fde0dc;color:#8a2a1f;">🚑 On Watch</span>
-  </div>
-  <div class="plant-row"><div class="key">🩺 Status</div><div class="val"><b>Just-propagated stumps.</b> The "Do Not Touch Till May 20" embargo lifted yesterday. Now in observation mode for new shoots.</div></div>
-  <div class="plant-row"><div class="key">✅ Alive if</div><div class="val">Stumps feel <b>firm</b> when pressed, no foul smell. New green shoots should appear within 2–4 weeks.</div></div>
-  <div class="plant-row"><div class="key">❌ Dead if</div><div class="val">Stumps are <b>mushy/squishy</b>, brown-black, smell rotten. Pull and discard.</div></div>
-  <div class="plant-row"><div class="key">💧 Water</div><div class="val"><b>Recovery mode:</b> Keep soil only <i>barely moist</i>, never wet. Overwatering during propagation = certain death.</div></div>
-  <div class="plant-row"><div class="key">☀️ Light</div><div class="val">Bright indirect. No direct sun on bare stumps — they'll burn.</div></div>
-  <div class="plant-row"><div class="key">🧤 Handling</div><div class="val">Sap is irritating to skin — wash hands after touching cuts/sap.</div></div>
-  <div class="fun-fact"><b>Fun fact:</b> Nicknamed "dumb cane" because chewing the stem temporarily paralyzes vocal cords. In the 1800s it was used as a cruel punishment. Beautiful houseplant with a violent past.</div>
-</div>
-
-<!-- 9. Peace Lily -->
+<!-- 7. Peace Lily -->
 <div class="plant-card">
   <img class="plant-photo" src="plants/09-peace-lily.jpg" alt="Peace Lily"
        onerror="this.outerHTML='<div class=&quot;photo-placeholder&quot;>📸 Save photo as<br><code>plants/09-peace-lily.jpg</code></div>'">
-  <h3>☮️ 9. Peace Lily</h3>
+  <h3>☮️ 7. Peace Lily</h3>
   <div class="sci">Spathiphyllum wallisii</div>
   <div class="badges">
     <span class="pill pill-med">Med Water</span>
@@ -723,11 +676,11 @@
   <div class="fun-fact"><b>Fun fact:</b> The drama queen of houseplants. She'll faint into the most pathetic droop possible to guilt you into watering, then perk back up like nothing happened. <b>The only plant that communicates clearly.</b></div>
 </div>
 
-<!-- 10. Snake Plant 2 -->
+<!-- 8. Snake Plant 2 -->
 <div class="plant-card">
   <img class="plant-photo" src="plants/10-snake-small.jpg" alt="Snake Plant Small"
        onerror="this.outerHTML='<div class=&quot;photo-placeholder&quot;>📸 Save photo as<br><code>plants/10-snake-small.jpg</code></div>'">
-  <h3>🐍 10. Snake Plant <span style="font-size:13px;">(Smaller, two blades)</span></h3>
+  <h3>🐍 8. Snake Plant <span style="font-size:13px;">(Smaller, two blades)</span></h3>
   <div class="sci">Dracaena trifasciata 'Laurentii'</div>
   <div class="badges">
     <span class="pill pill-low">Low Water</span>
@@ -743,20 +696,24 @@
   <div class="fun-fact"><b>Fun fact:</b> The yellow edges (variegation) on this variety can disappear if you propagate via leaf cuttings — only division keeps the gold. Plant genetics flex.</div>
 </div>
 
-<!-- 11. Aphelandra -->
-<div class="plant-card">
+<!-- 9. Aphelandra -->
+<div class="plant-card" style="border: 2px solid var(--warn);">
   <img class="plant-photo" src="plants/11-aphelandra.jpg" alt="Aphelandra"
        onerror="this.outerHTML='<div class=&quot;photo-placeholder&quot;>📸 Save photo as<br><code>plants/11-aphelandra.jpg</code></div>'">
-  <h3>🦓 11. Aphelandra <span style="font-size:13px;">(Zebra Plant)</span></h3>
+  <h3>🦓 9. Aphelandra <span style="font-size:13px;">(Zebra Plant)</span></h3>
   <div class="sci">Aphelandra squarrosa</div>
   <div class="badges">
     <span class="pill pill-high">High Water</span>
     <span class="pill pill-hard">Difficulty 4/5</span>
+    <span class="pill" style="background:#fde0dc;color:#8a2a1f;">🚑 On Watch</span>
   </div>
+  <div class="plant-row"><div class="key">🩺 Status</div><div class="val"><b>Critical.</b> Bare woody stem, 2–3 leaves left at the tip. Leggy since May and still declining — prune now (see the Bushy Pot card below) or lose it.</div></div>
+  <div class="plant-row"><div class="key">✅ Alive if</div><div class="val">Stem is <b>green</b> under a fingernail scratch. Expect new shoots 2–4 weeks after cutting back.</div></div>
+  <div class="plant-row"><div class="key">❌ Dead if</div><div class="val">Stem is shrivelled, hollow, or brown all the way through; no shoots 4+ weeks after pruning.</div></div>
   <div class="plant-row"><div class="key">💧 Water</div><div class="val">Every 5–7 days. Soil should stay <b>consistently moist</b> — neither swampy nor dry.</div></div>
   <div class="plant-row"><div class="key">☀️ Light</div><div class="val">Bright indirect. Direct sun scorches the leaves.</div></div>
   <div class="plant-row"><div class="key">💨 Humidity</div><div class="val">Very high (60%+). Bathroom or kitchen ideal.</div></div>
-  <div class="plant-row"><div class="key">⚠️ Heads-up</div><div class="val">Yours looks leggy (bare lower stem). That's typical — they lose lower leaves easily. Prune the top to encourage bushy regrowth.</div></div>
+  <div class="plant-row"><div class="key">✂️ Fix</div><div class="val">Prune the top to force bushy regrowth. Losing lower leaves is typical for the species, but this one is well past that — see the reference card below.</div></div>
   <div class="signals">
     <div class="signal-line"><span class="icon">🥵</span><b>Underwatered:</b> Lower leaves drop fast — Aphelandras are dramatic.</div>
     <div class="signal-line"><span class="icon">💦</span><b>Overwatered:</b> Wilting <i>despite</i> wet soil, brown leaf tips.</div>
@@ -764,11 +721,11 @@
   <div class="fun-fact"><b>Fun fact:</b> When happy, it produces a bright yellow cone-shaped flower spike that lasts up to 6 weeks. The "zebra stripes" are the white leaf veins glowing against the dark green.</div>
 </div>
 
-<!-- 12. Sempervivum -->
+<!-- 10. Sempervivum -->
 <div class="plant-card">
   <img class="plant-photo" src="plants/12-sempervivum.jpg" alt="Sempervivum"
        onerror="this.outerHTML='<div class=&quot;photo-placeholder&quot;>📸 Save photo as<br><code>plants/12-sempervivum.jpg</code></div>'">
-  <h3>🐣 12. Sempervivum <span style="font-size:13px;">(Hens and Chicks)</span></h3>
+  <h3>🐣 10. Sempervivum <span style="font-size:13px;">(Hens and Chicks)</span></h3>
   <div class="sci">Sempervivum ciliosum</div>
   <div class="badges">
     <span class="pill pill-low">Low Water</span>
@@ -783,6 +740,26 @@
     <div class="signal-line"><span class="icon">💦</span><b>Overwatered:</b> Rosette turns mushy/translucent, leaves detach at a touch, black rot at the base.</div>
   </div>
   <div class="fun-fact"><b>Fun fact:</b> Those fine white hairs fringing each leaf are a real adaptation — on alpine cliffs and rooftops across Europe they shield the rosette from intense UV and trap a layer of insulating air against frost. <i>Sempervivum</i> literally means "always alive" in Latin — medieval Europeans planted it on roof tiles believing it warded off lightning.</div>
+</div>
+
+<!-- 11. Lucky Bamboo -->
+<div class="plant-card">
+  <img class="plant-photo" src="plants/13-lucky-bamboo.jpg" alt="Lucky Bamboo"
+       onerror="this.outerHTML='<div class=&quot;photo-placeholder&quot;>📸 Save photo as<br><code>plants/13-lucky-bamboo.jpg</code></div>'">
+  <h3>🎋 11. Lucky Bamboo <span style="font-size:13px;">(Grown in water)</span></h3>
+  <div class="sci">Dracaena sanderiana</div>
+  <div class="badges">
+    <span class="pill pill-low">Low Water</span>
+    <span class="pill pill-easy">Difficulty 2/5</span>
+  </div>
+  <div class="plant-row"><div class="key">💧 Water</div><div class="val">Never watered like a potted plant — it lives in standing water. <b>Replace the water completely every 1–2 weeks</b>, keeping the level just covering the roots and pebbles, no higher.</div></div>
+  <div class="plant-row"><div class="key">☀️ Light</div><div class="val">Bright indirect only. Direct sun scorches the leaves and cooks the water.</div></div>
+  <div class="plant-row"><div class="key">🚱 Water type</div><div class="val"><b>Distilled or filtered only.</b> Tap water fluoride and chlorine are what turn the leaf tips yellow-brown — and that damage doesn't reverse.</div></div>
+  <div class="signals">
+    <div class="signal-line"><span class="icon">🥵</span><b>Underwatered:</b> Water level dropped below the roots; stalks soften and leaves curl.</div>
+    <div class="signal-line"><span class="icon">💦</span><b>Overwatered:</b> Water too deep up the stalk, or left unchanged too long — stalk yellows from the base and the water smells sour.</div>
+  </div>
+  <div class="fun-fact"><b>Fun fact:</b> It isn't bamboo at all — it's a <i>Dracaena</i>, the same genus as both your snake plants. Real bamboo is a grass that would outgrow that vase in a month.</div>
 </div>
 
 </div>
@@ -887,7 +864,7 @@
     <tr><td><b>Rule #2</b></td><td>Stick your finger 1 inch into the soil. If it's dry, water. If it's damp, wait.</td></tr>
     <tr><td><b>Rule #3</b></td><td>Yellow leaves = usually overwatering. Crispy brown = usually underwatering or low humidity.</td></tr>
     <tr><td><b>Rule #4</b></td><td>Pick a "watering day" (e.g., every Saturday). Check all plants, water only the ones that need it.</td></tr>
-    <tr><td><b>Rule #5</b></td><td>The Peace Lily is your alarm clock — she droops first. When she does, check the Calathea, Dieffenbachia, and Aphelandra too.</td></tr>
+    <tr><td><b>Rule #5</b></td><td>The Peace Lily is your alarm clock — she droops first. When she does, check the Calathea and Aphelandra too.</td></tr>
     <tr><td><b>Rule #6</b></td><td>Plants in <b>terracotta</b> dry faster. Plants in <b>plastic/glazed ceramic</b> stay wet longer. Adjust accordingly.</td></tr>
     <tr><td><b>Rule #7</b></td><td>Rotate plants 1/4 turn every week so they grow evenly toward the light.</td></tr>
   </tbody>
@@ -897,8 +874,7 @@
 <footer>
   Made with 🌱 for Keyur · Print this page (Cmd+P → Save as PDF) for a physical reference · Update as you add/lose plants
   <div style="margin-top: 10px; font-size: 11px; opacity: 0.7;">
-    Reference photos courtesy of <a href="https://commons.wikimedia.org/" style="color:var(--muted);">Wikimedia Commons</a> contributors (CC BY-SA).
-    Personal progress photos stored locally in <code>plants/private/</code> (not published).
+    Plant photos by Keyur. Full-resolution originals stored locally in <code>plants/private/</code> (not published).
   </div>
 </footer>
 

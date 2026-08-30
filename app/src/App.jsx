@@ -101,7 +101,7 @@ export default function App() {
                     ["Rule #2", "Stick your finger 1 inch into the soil. If it's dry, water. If it's damp, wait."],
                     ["Rule #3", "Yellow leaves = usually overwatering. Crispy brown = usually underwatering or low humidity."],
                     ["Rule #4", 'Pick a "watering day" (e.g., every Saturday). Check all plants, water only the ones that need it.'],
-                    ["Rule #5", "The Peace Lily is your alarm clock — she droops first. When she does, check the Calathea, Dieffenbachia, and Aphelandra too."],
+                    ["Rule #5", "The Peace Lily is your alarm clock — she droops first. When she does, check the Calathea and Aphelandra too."],
                     ["Rule #6", "Plants in terracotta dry faster. Plants in plastic/glazed ceramic stay wet longer. Adjust accordingly."],
                     ["Rule #7", "Rotate plants ¼ turn every week so they grow evenly toward the light."],
                   ].map(([rule, text]) => (
@@ -115,10 +115,7 @@ export default function App() {
       </main>
 
       <footer className="app-footer">
-        Made with 🌱 for Keyur ·{' '}
-        <a href="https://commons.wikimedia.org/" target="_blank" rel="noreferrer">
-          Photos: Wikimedia Commons
-        </a>
+        Made with 🌱 for Keyur
       </footer>
     </div>
   );
