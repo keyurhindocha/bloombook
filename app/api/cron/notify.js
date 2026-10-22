@@ -2,6 +2,7 @@ import webpush from 'web-push';
 import { Redis } from '@upstash/redis';
 import { plants } from '../../src/data/plants.js';
 import { parseFrequency } from '../../src/utils/scheduleParser.js';
+import { secretMatches } from '../_auth.js';
 
 const redis = Redis.fromEnv();
 
@@ -13,7 +14,8 @@ webpush.setVapidDetails(
 
 export default async function handler(req, res) {
   // Vercel verifies cron requests with this header
-  if (req.headers.authorization !== `Bearer ${process.env.CRON_SECRET}`) {
+  const expected = process.env.CRON_SECRET && `Bearer ${process.env.CRON_SECRET}`;
+  if (!secretMatches(req.headers.authorization, expected)) {
     return res.status(401).end();
   }
 

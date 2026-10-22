@@ -1,4 +1,5 @@
 import { Redis } from '@upstash/redis';
+import { hasAppSecret } from './_auth.js';
 import { plants } from '../../src/data/plants.js';
 
 const redis = Redis.fromEnv();
@@ -6,7 +7,7 @@ const VALID_PLANT_IDS = new Set(plants.map((p) => p.id));
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end();
-  if (req.headers['x-app-secret'] !== process.env.APP_SECRET) return res.status(401).end();
+  if (!hasAppSecret(req)) return res.status(401).end();
 
   const { plantId, wateredAt } = req.body ?? {};
 
